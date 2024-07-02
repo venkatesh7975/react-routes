@@ -1,6 +1,6 @@
 import React from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
-import Cards from "./components/Cards";
+import Contact from "./components/Contact";
 import Even from "./components/Even";
 import Header from "./components/Header";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
@@ -13,7 +13,7 @@ export default function App() {
       <Header />
 
       <Routes>
-        <Route path="/cards" element={<Cards />} />
+        <Route path="/contact" element={<Contact />} />
         <Route path="/even" element={<Even />} />
         <Route path="/game" element={<NumberGame />} />
         <Route path="/counter" element={<Counter />} />

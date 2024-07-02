@@ -26,7 +26,7 @@ const Contacts = () => {
   return (
     <div className="container">
       <h2 className="my-4">Contacts</h2>
-      <div className="row">
+      <div className="row justify-content-center">
         {contacts.map((contact) => (
           <div className="col-md-4 mb-3">
             <div className="card">

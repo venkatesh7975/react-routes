@@ -25,7 +25,7 @@ export default function Counter() {
   }
 
   return (
-    <div>
+    <div className="text-center">
       <h1 className={className}>{count}</h1>
       <button onClick={onDecrease} className="btn btn-danger m-3">
         Decrease

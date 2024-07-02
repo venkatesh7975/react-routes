@@ -3,32 +3,36 @@ import React, { useState } from "react";
 export default function NumberGame() {
   const [num, setNum] = useState("");
   const [guessResult, setGuessResult] = useState("");
-
-  // Generate a random number between 1 and 10
-  const randomNumber = Math.floor(Math.random() * 10) + 1;
+  const [className, setClassName] = useState("");
 
   function onInput(e) {
     setNum(e.target.value);
   }
 
   function handleGuess() {
+    const randomNumber = Math.floor(Math.random() * 10) + 1;
     const guessedNumber = parseInt(num);
+    let resultText, resultClassName;
 
     if (isNaN(guessedNumber)) {
-      setGuessResult("Please enter a valid number.");
+      resultText = "Please enter a valid number.";
+      resultClassName = "text-danger";
     } else {
       if (guessedNumber === randomNumber) {
-        setGuessResult("Congratulations! You guessed the correct number.");
+        resultText = "Congratulations! You guessed the correct number.";
+        resultClassName = "text-success";
       } else {
-        setGuessResult(
-          `Sorry, the correct number was ${randomNumber}. Try again!`
-        );
+        resultText = `Sorry, the correct number was ${randomNumber}. Try again!`;
+        resultClassName = "text-danger";
       }
     }
+
+    setGuessResult(resultText);
+    setClassName(resultClassName);
   }
 
   return (
-    <div>
+    <div className="text-center m-5 p-5">
       <input
         type="number"
         placeholder="Enter your guess"
@@ -36,7 +40,7 @@ export default function NumberGame() {
         onChange={onInput}
       />
       <button onClick={handleGuess}>Guess</button>
-      <p>{guessResult}</p>
+      <p className={className}>{guessResult}</p>
     </div>
   );
 }

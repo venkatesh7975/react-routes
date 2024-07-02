@@ -6,7 +6,7 @@ export default function Even() {
     return num % 2 === 0;
   });
   return (
-    <div>
+    <div className="text-center justify-content-center">
       {evenNumbers.map(function (num) {
         return (
           <div>
